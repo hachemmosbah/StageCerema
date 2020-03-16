@@ -31,4 +31,5 @@ Le reporting est un compte rendu bref et quotidien de la progression de la team.
 Les logs regroupe les ajout et modification significative du dépot.
 
 * **2020/03/13** : Création du dépot.
+* **2020/03/13** : Upload Ver 0.1.0 de la doc -> Enrichissement des contents 
 
