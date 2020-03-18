@@ -11,7 +11,8 @@ Dans ce repertoire vous pourrez retrouver une documentation détaillé de la sta
 
 L'équipe est composé : Hachem Mosbah, Daniel Kaddous et Joshua Harris.
 
-`Readme <https://github.com/hachem13/StageCerema/blob/master/README.md>`_ | `Trello <https://trello.com/b/oE3T8HdO/stage-cerema>`_
+`Readme <https://github.com/hachem13/StageCerema/blob/master/README.md>`_ | 
+`Trello <https://trello.com/b/oE3T8HdO/stage-cerema>`_
 
 Réseau Neuronal
 ---------------
@@ -40,7 +41,8 @@ En modélisation des circuits biologiques, ils permettent de tester quelques hyp
 
    reseau-neuronal/neat-eo
    reseau-neuronal/yolo
-   reseau-neuronal/yolt	  
+   reseau-neuronal/yolt	
+   reseau-neuronal/senas  
 
 Logiciel Géospatial
 -------------------
