@@ -23,4 +23,4 @@ Cr√©ation de prototype cartographique cliquable ou statique contenant les entit√
 `API Explorer <https://overpass-turbo.eu/>`_
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 3

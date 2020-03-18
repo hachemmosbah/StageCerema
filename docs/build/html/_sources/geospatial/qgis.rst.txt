@@ -12,4 +12,4 @@ QGIS est un logiciel SIG libre multiplate-forme publié sous licence GPL. Le dé
 
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 3

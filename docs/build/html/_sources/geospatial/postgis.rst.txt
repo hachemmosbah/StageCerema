@@ -14,5 +14,5 @@ Le nom provient de la contraction de PostgreSQL et de GIS (acronyme anglais de S
 `Website <https://postgis.net/>`_
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 3
 

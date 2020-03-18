@@ -11,4 +11,4 @@ IN PROGRESS
 
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 3

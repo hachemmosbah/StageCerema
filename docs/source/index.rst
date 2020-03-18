@@ -28,10 +28,11 @@ En modélisation des circuits biologiques, ils permettent de tester quelques hyp
   :doc:`Neat-EO <reseau-neuronal/neat-eo>`
 
 * **Reconnaissance**:
-  :doc:`YOLO <reseau-neuronal/yolo>`
-
-* **Reconnaissance**:
+  :doc:`YOLO <reseau-neuronal/yolo>` |
   :doc:`YOLT <reseau-neuronal/yolt>`
+
+* **In progress**:
+  :doc:`Senas <reseau-neuronal/senas>`
 
 
 .. toctree::
@@ -62,6 +63,12 @@ Cette caractéristique clé du SIG permet d’imaginer de nouvelles applications
 
 * **Reconnaissance**:
   :doc:`QGIS <geospatial/qgis>`
+
+* **Data Mapping**:
+  :doc:`API Overpass Turbo <geospatial/overpass_turbo>`
+
+* **Database Geographique**:
+  :doc:`PostgreSQL <geospatial/postgresql>`
 
 
 .. toctree::

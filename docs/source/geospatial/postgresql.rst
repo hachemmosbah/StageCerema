@@ -12,4 +12,4 @@ Ce système est concurrent d'autres systèmes de gestion de base de données, qu
 `Documentation <https://www.postgresql.org/docs/12/index.html>`_
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 3
