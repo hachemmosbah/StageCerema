@@ -35,7 +35,7 @@ En modélisation des circuits biologiques, ils permettent de tester quelques hyp
 
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :hidden:
    :caption: Réseau neuronal
 
@@ -65,7 +65,7 @@ Cette caractéristique clé du SIG permet d’imaginer de nouvelles applications
 
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :hidden:
    :caption: Logiciel Géospatial
 

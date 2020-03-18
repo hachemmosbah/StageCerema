@@ -19,7 +19,8 @@ Tester ou développer des requêtes avec l'API Overpass plus ou moins complexes.
 Convertir des données OSM au format geoJSON.
 Création de prototype cartographique cliquable ou statique contenant les entités OSM mises en surbrillance.
 
-`Wiki <https://wiki.openstreetmap.org/wiki/FR:Overpass_turbo>`_ | `API Explorer <https://overpass-turbo.eu/>`_
+`Wiki <https://wiki.openstreetmap.org/wiki/FR:Overpass_turbo>`_ | 
+`API Explorer <https://overpass-turbo.eu/>`_
 
 .. toctree::
     :maxdepth: 2
