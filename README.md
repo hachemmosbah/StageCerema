@@ -6,7 +6,7 @@ L'équipe est composé : Hachem Mosbah, Daniel Kaddous et Joshua Harris.
 
 Responsable de la documentation : Joshua
 
-[Lien vers la documentation ](https://documentation-med-data.readthedocs.io/en/latest/)
+[Lien vers la documentation](https://documentation-med-data.readthedocs.io/en/latest/)
 
 
 ## <p align=center>Reporting</p>
@@ -28,12 +28,18 @@ Le reporting est un compte rendu bref et quotidien de la progression de la team.
 
 * **2020/03/13 :** **REMOTE :** Mise en place d'un environement full remote avec la stack, création d'un [Trello](https://trello.com/b/oE3T8HdO/stage-cerema) et de la [Documentation](https://documentation-med-data.readthedocs.io/en/latest/).
 
-* **2020/03/13 :** **Doc :** Update doc .md into .rst, Process : +7 000 Orthophoto, **Audit :** Neat-EO,Senas, **Trello :** Création du trello.
+* **2020/03/16 :** **Doc :** Update .md into .rst, **Process :** +7 000 Orthophoto, **Audit :** Neat-EO,Senas, **Trello :** Création du trello.
+
+* **2020/03/17 :** **Sampling :** Dataset terminé -> Upload (Hachem) sur Box fournie par Cerema -> Download Dataset (Daniel)
+
+* **2020/03/18 :** **Doc :** Update ajout de section Senas,Overpass et PostgreSQL (Joshua) **Training AI :** Premiers essais de training sur le dataset (Daniel).
+  
+
 
 ## <p align=center>Logs</p>
 
 Les logs regroupe les ajout et modification significative du dépot.
 
 * **2020/03/13** : Création du dépot.
-* **2020/03/13** : Upload Ver 0.1.0 de la doc -> Enrichissement des contents 
-
+* **2020/03/16** : Upload Ver 0.1.0 de la doc -> Enrichissement de contents.
+* **2020/03/18** : Upload Ver 0.1.1 de la doc sections Enrichis + ajouts de nouvelles sections -> Enrichessements de contents.
