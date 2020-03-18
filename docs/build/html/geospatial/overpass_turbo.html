@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>PostGIS &mdash; Med-Data 0.0.1 documentation</title>
+  <title>Overpass Turbo &mdash; Med-Data 0.0.1 documentation</title>
   
 
   
@@ -34,9 +34,7 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="QGIS" href="qgis.html" />
-    <link rel="prev" title="Senas" href="../reseau-neuronal/senas.html" /> 
+    <link rel="search" title="Search" href="../search.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -88,13 +86,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../reseau-neuronal/senas.html">Senas</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Logiciel Géospatial</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">PostGIS</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#intro">Intro</a><ul class="simple">
-</ul>
-</li>
-</ul>
-</li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="postgis.html">PostGIS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="qgis.html">QGIS</a></li>
 </ul>
 
@@ -141,13 +134,13 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-      <li>PostGIS</li>
+      <li>Overpass Turbo</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/geospatial/postgis.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/geospatial/overpass_turbo.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -160,13 +153,21 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="postgis">
-<h1>PostGIS<a class="headerlink" href="#postgis" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="overpass-turbo">
+<h1>Overpass Turbo<a class="headerlink" href="#overpass-turbo" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="intro">
 <h2>Intro<a class="headerlink" href="#intro" title="Permalink to this headline">¶</a></h2>
-<p>PostGIS est une extension (plugin) du SGBD PostgreSQL, qui active la manipulation d’informations géographiques (spatiales) sous forme de géométries (points, lignes, polygones), conformément aux standards établis par l’Open Geospatial Consortium. Il permet à PostgreSQL d’être un SGBD spatial (SGBDs) pour pouvoir être utilisé par les systèmes d’informations géographiques.</p>
-<p>Le nom provient de la contraction de PostgreSQL et de GIS (acronyme anglais de SIG). Concrètement, PostGIS permet le traitement d’objets spatiaux dans PostgreSQL, autorisant le stockage des objets graphiques en base de données pour les SIG, un peu comme le SDE[Quoi ?] de ESRI, la base de données spatiale d’IBM Informix Dynamic Server ou l’extension spatiale d’Oracle.</p>
-<p><a class="reference external" href="https://fr.wikipedia.org/wiki/PostGIS">WIKI</a></p>
+<p>L’API Overpass peut être un excellent outil pour la cartographie, car il est très puissant en filtrant les données OSM. Avec Overpass Turbo, il est facile d’exécuter rapidement des requêtes Overpass et d’inspecter les résultats d’une manière conviviale. Voici quelques exemples où Overpass turbo” peut être un outil cartographique pratique :</p>
+<p>Rechercher, sur une grande surface, de (rares) fautes d’orthographe et des erreurs de casse en respectant une convention de nommage.
+Rechercher des POI spéciaux qui ne sont pas dessinés sur la carte.
+Analyser des POI (par exemple, les nœuds “place”) pour vérifier s’ils sont uniformément répartis sur de grandes surfaces.
+Afficher spatialement de grandes entités (les frontières, les rivières, les autoroutes complètes, points de connexion, …) puis les charger directement dans un éditeur.
+Filtrer les données OSM que vous souhaitez visualiser.</p>
+<p>Pour nous développeurs :</p>
+<p>Tester ou développer des requêtes avec l’API Overpass plus ou moins complexes.
+Convertir des données OSM au format geoJSON.
+Création de prototype cartographique cliquable ou statique contenant les entités OSM mises en surbrillance.</p>
+<p><a class="reference external" href="https://wiki.openstreetmap.org/wiki/FR:Overpass_turbo">WIKI</a> | <a class="reference external" href="https://overpass-turbo.eu/">API Explorer</a></p>
 <div class="toctree-wrapper compound">
 </div>
 </div>
@@ -177,15 +178,6 @@
            
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="qgis.html" class="btn btn-neutral float-right" title="QGIS" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="../reseau-neuronal/senas.html" class="btn btn-neutral float-left" title="Senas" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>
