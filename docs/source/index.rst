@@ -61,11 +61,9 @@ Cette caractéristique clé du SIG permet d’imaginer de nouvelles applications
 * **Sampling**:
   :doc:`PostGIS <geospatial/postgis>`
 
-* **Reconnaissance**:
-  :doc:`QGIS <geospatial/qgis>`
-
 * **Data Mapping**:
-  :doc:`API Overpass Turbo <geospatial/overpass_turbo>`
+  :doc:`API Overpass Turbo <geospatial/overpass_turbo>` |
+  :doc:`QGIS <geospatial/qgis>`
 
 * **Database Geographique**:
   :doc:`PostgreSQL <geospatial/postgresql>`
