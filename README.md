@@ -36,7 +36,7 @@ Le reporting est un compte rendu bref et quotidien de la progression de la team.
 
 * **2020/03/19** :**Process :** Upload ortho de découpage senas, 
 
-* **2020/03/20** :**Process :** Train du script [parking.py](https://github.com/hachem13/StageCerema/blob/master/docs/source/external-files/train_parking.py)
+* **2020/03/20** :**Process :** Train du script [parking.py](https://github.com/hachem13/StageCerema/blob/master/docs/source/external-files/train_parking.py) (parkings-paris)
   
 * **2020/03/23** :**Process :** Saturation du prog python en deeplearning (db weak)
 
@@ -44,7 +44,7 @@ Le reporting est un compte rendu bref et quotidien de la progression de la team.
 
 * **2020/03/25** :**QGIS :** Sampling d'ortho parking/non_parking QGI
   
-* **2020/03/26** :**
+* **2020/03/26** :**Process :** Train du script [parking.py](https://github.com/hachem13/StageCerema/blob/master/docs/source/external-files/train_parking.py) (parkings-paca)
 
 
 
