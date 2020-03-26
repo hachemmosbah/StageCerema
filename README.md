@@ -36,7 +36,7 @@ Le reporting est un compte rendu bref et quotidien de la progression de la team.
 
 * **2020/03/19** :**Process :** Upload ortho de découpage senas, 
 
-* **2020/03/20** :**Process :** Train des données parking en python 
+* **2020/03/20** :**Process :** Train du  
   
 * **2020/03/23** :**Process :** Saturation du prog python en deeplearning (db weak)
 
