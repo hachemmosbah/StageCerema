@@ -33,7 +33,19 @@ Le reporting est un compte rendu bref et quotidien de la progression de la team.
 * **2020/03/17 :** **Sampling :** Dataset terminé -> Upload (Hachem) sur Box fournie par Cerema -> Download Dataset (Daniel)
 
 * **2020/03/18 :** **Doc :** Update ajout de section Senas,Overpass et PostgreSQL (Joshua) **Training AI :** Premiers essais de training sur le dataset (Daniel).
+
+* **2020/03/19** :**Process :** Upload ortho de découpage senas, 
+
+* **2020/03/20** :**Process :** Train des données parking en python 
   
+* **2020/03/23** :**Process :** Saturation du prog python en deeplearning (db weak)
+
+* **2020/03/24** :**Process :** Sampling d'ortho supplémentaire **Audit :** python code non_parking & non_bati
+
+* **2020/03/25** :**QGIS :** Sampling d'ortho parking/non_parking QGI
+  
+* **2020/03/26** :**
+
 
 
 ## <p align=center>Logs</p>

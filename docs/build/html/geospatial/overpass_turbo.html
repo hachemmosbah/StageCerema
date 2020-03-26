@@ -92,7 +92,8 @@
 <li class="toctree-l1"><a class="reference internal" href="postgis.html">PostGIS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="qgis.html">QGIS</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Overpass Turbo</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#intro">Intro</a><ul class="simple">
+<li class="toctree-l2"><a class="reference internal" href="#intro">Intro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#extraction-de-data">Extraction de data</a><ul class="simple">
 </ul>
 </li>
 </ul>
@@ -176,6 +177,26 @@ Filtrer les données OSM que vous souhaitez visualiser.</p>
 <p>Tester ou développer des requêtes avec l’API Overpass plus ou moins complexes.
 Convertir des données OSM au format geoJSON.
 Création de prototype cartographique cliquable ou statique contenant les entités OSM mises en surbrillance.</p>
+</div>
+<div class="section" id="extraction-de-data">
+<h2>Extraction de data<a class="headerlink" href="#extraction-de-data" title="Permalink to this headline">¶</a></h2>
+<p>Nous nous sommes rendu sur l’api pour</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">timeout</span><span class="p">:</span><span class="mi">40000</span><span class="p">];</span>
+<span class="p">(</span>
+ <span class="o">//</span><span class="n">area</span><span class="p">(</span><span class="mi">3601403916</span><span class="p">);</span> <span class="o">//</span> <span class="n">France</span> <span class="n">métropolitaine</span> <span class="mi">1403916</span>
+ <span class="n">area</span><span class="p">(</span><span class="mi">3600008654</span><span class="p">);</span> <span class="o">//</span> <span class="n">Paca</span> <span class="mi">8654</span>
+<span class="p">)</span><span class="o">-&gt;.</span><span class="n">zone</span><span class="p">;</span>
+
+<span class="p">(</span>
+ <span class="n">node</span><span class="p">[</span><span class="n">amenity</span><span class="o">=</span><span class="n">parking</span><span class="p">](</span><span class="n">area</span><span class="o">.</span><span class="n">zone</span><span class="p">);</span>
+ <span class="p">(</span>
+  <span class="n">way</span><span class="p">[</span><span class="n">amenity</span><span class="o">=</span><span class="n">parking</span><span class="p">](</span><span class="n">area</span><span class="o">.</span><span class="n">zone</span><span class="p">);</span>
+  <span class="p">(</span><span class="o">.</span><span class="n">_</span><span class="p">;</span><span class="o">&gt;</span><span class="p">;);</span>
+ <span class="p">);</span>
+<span class="p">);</span>
+<span class="n">out</span> <span class="n">meta</span><span class="p">;</span>
+</pre></div>
+</div>
 <p><a class="reference external" href="https://wiki.openstreetmap.org/wiki/FR:Overpass_turbo">Wiki</a> |
 <a class="reference external" href="https://overpass-turbo.eu/">API Explorer</a></p>
 <div class="toctree-wrapper compound">

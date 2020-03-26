@@ -91,7 +91,25 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="postgis.html">PostGIS</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">QGIS</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#intro">Intro</a><ul class="simple">
+<li class="toctree-l2"><a class="reference internal" href="#intro">Intro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#echantillionnage-d-element-non-parkings">Echantillionnage d’élement non parkings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#verification-des-donnees-parkings">Vérification des données parkings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#liste-des-classes">Liste des classes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#selection-des-objets-a-echantillonner">Sélection des objets à échantillonner</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#echantillonnage-stratifie">Echantillonnage stratifié</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#verification-du-nb-d-objets-dans-chaque-classe">Vérification du nb d’objets dans chaque classe</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sauvegarde-de-la-couche">Sauvegarde de la couche</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#reglages-pour-atlas">Réglages pour atlas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#je-fais-l-atlas-sur-ces-objets">Je fais l’atlas sur ces objets</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#echantillionnage-d-elements-parkings">Echantillionnage d’éléments parkings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ouvrir-couche-communes-et-la-filtrer">Ouvrir couche communes et la filtrer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#extraire-par-localisation">Extraire par localisation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#echantillonnage">Echantillonnage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#atlas">Atlas</a><ul class="simple">
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -167,10 +185,120 @@
 <div class="section" id="intro">
 <h2>Intro<a class="headerlink" href="#intro" title="Permalink to this headline">¶</a></h2>
 <p>QGIS est un logiciel SIG libre multiplate-forme publié sous licence GPL. Le développement a débuté en mai 2002 et est sorti en tant que projet sur SourceForge en juin 2002. Il était également appelé Quantum GIS jusqu’en septembre 2013.</p>
+</div>
+<div class="section" id="echantillionnage-d-element-non-parkings">
+<h2>Echantillionnage d’élement non parkings<a class="headerlink" href="#echantillionnage-d-element-non-parkings" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="verification-des-donnees-parkings">
+<h3>Vérification des données parkings<a class="headerlink" href="#verification-des-donnees-parkings" title="Permalink to this headline">¶</a></h3>
+<p>Je vois l’aire maximale des parkings sur Bouches du Rhône</p>
+<blockquote>
+<div><p>Vue &gt; Statistiques</p>
+</div></blockquote>
+<p>&gt;</p>
+<blockquote>
+<div><p>$area :</p>
+<p>Statistique     Valeur
+Moyenne 1493.8
+Médiane 639.879
+Minimum 7.15668
+Maximum 86399.6
+Plage   86392.5
+Minorité        7.15668
+Majorité        2583.67
+Variété 5877
+Q1      270.35
+Q3      1509.46
+IQR     1239.11
+Valeurs (null) manquantes       0</p>
+</div></blockquote>
+</div>
+<div class="section" id="liste-des-classes">
+<h3>Liste des classes<a class="headerlink" href="#liste-des-classes" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>Vecteur &gt; Outils d’analyse &gt; Lister les valeurs uniques</p>
+</div></blockquote>
+</div>
+<div class="section" id="selection-des-objets-a-echantillonner">
+<h3>Sélection des objets à échantillonner<a class="headerlink" href="#selection-des-objets-a-echantillonner" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>Traitement &gt; Extraire par expression</p>
+</div></blockquote>
+<p>&gt;</p>
+<blockquote>
+<div><p>“LIB4_17” NOT ILIKE ‘%parking%’
+and “LIB4_17” NOT IN (
+‘Cours et voies d?eau’,
+‘Ripisylves’,
+‘Réseau routier et bâtis techniques associés’,
+‘Réseau ferroviaire et bâtis techniques associés’,
+‘Chemins, Digues et Interstices agricoles’,
+‘Canal’,
+‘Espaces associés aux réseaux routier et/ou ferroviaire’)
+and $area &lt;= 83000</p>
+</div></blockquote>
+</div>
+<div class="section" id="echantillonnage-stratifie">
+<h3>Echantillonnage stratifié<a class="headerlink" href="#echantillonnage-stratifie" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>Traitement &gt; Extraire aléatoirement parmi des sous ensembles &gt; choisir colonne LIB4_17</p>
+</div></blockquote>
+</div>
+<div class="section" id="verification-du-nb-d-objets-dans-chaque-classe">
+<h3>Vérification du nb d’objets dans chaque classe<a class="headerlink" href="#verification-du-nb-d-objets-dans-chaque-classe" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>Vecteur &gt; Group Stats</p>
+</div></blockquote>
+<p>pour avoir le nb d’éléments par classes</p>
+</div>
+<div class="section" id="sauvegarde-de-la-couche">
+<h3>Sauvegarde de la couche<a class="headerlink" href="#sauvegarde-de-la-couche" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>Couche &gt; Exporter sous &gt; Sauvegarder les entités sous &gt; GeoPackage ou GeoJSON (pour Daniel)</p>
+</div></blockquote>
+</div>
+<div class="section" id="reglages-pour-atlas">
+<h3>Réglages pour atlas<a class="headerlink" href="#reglages-pour-atlas" title="Permalink to this headline">¶</a></h3>
+<p>Je coche seulement ortho</p>
+<p>Je crée un réglage/thème pour mémoriser ortho cochée</p>
+</div>
+<div class="section" id="je-fais-l-atlas-sur-ces-objets">
+<h3>Je fais l’atlas sur ces objets<a class="headerlink" href="#je-fais-l-atlas-sur-ces-objets" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="echantillionnage-d-elements-parkings">
+<h2>Echantillionnage d’éléments parkings<a class="headerlink" href="#echantillionnage-d-elements-parkings" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="ouvrir-couche-communes-et-la-filtrer">
+<h3>Ouvrir couche communes et la filtrer<a class="headerlink" href="#ouvrir-couche-communes-et-la-filtrer" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>Couche &gt; Filtrer</p>
+</div></blockquote>
+<p>&gt;</p>
+<blockquote>
+<div><p>CODE_DEPT = ‘13’</p>
+</div></blockquote>
+</div>
+<div class="section" id="extraire-par-localisation">
+<h3>Extraire par localisation<a class="headerlink" href="#extraire-par-localisation" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>Traitement &gt; Extraire par localisation</p>
+</div></blockquote>
+<p>Choisir les objets parkings qui intersectent les communes du 13</p>
+</div>
+<div class="section" id="echantillonnage">
+<h3>Echantillonnage<a class="headerlink" href="#echantillonnage" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>Traitement &gt; Extraire aléatoirement</p>
+</div></blockquote>
+<p>Choisir 4000 objets parkings au hasard pour l’atlas Parking</p>
+</div>
+<div class="section" id="atlas">
+<h3>Atlas<a class="headerlink" href="#atlas" title="Permalink to this headline">¶</a></h3>
+<p>Atlas parking</p>
 <p><a class="reference external" href="https://fr.wikipedia.org/wiki/QGIS">Wiki</a> |
 <a class="reference external" href="https://docs.qgis.org/3.10/fr/docs/user_manual/">Documentation</a> |
 <a class="reference external" href="https://www.qgis.org/fr/docs/index.html">Website</a></p>
 <div class="toctree-wrapper compound">
+</div>
 </div>
 </div>
 </div>

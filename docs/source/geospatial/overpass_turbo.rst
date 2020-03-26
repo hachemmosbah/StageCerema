@@ -19,6 +19,30 @@ Tester ou développer des requêtes avec l'API Overpass plus ou moins complexes.
 Convertir des données OSM au format geoJSON.
 Création de prototype cartographique cliquable ou statique contenant les entités OSM mises en surbrillance.
 
+Extraction de data
+------------------
+
+On utilise cette querie pour extraire la position des parkings sur la région paca, on va l'extraire en format geoJSON de sorte à pouvoir en faire un layer dans QGIS pour le sampling d'ortho. 
+Voici la querie que nous avons utiliser :
+
+.. code-block:: 
+
+    [timeout:40000];
+    (
+     //area(3601403916); // France métropolitaine 1403916
+     area(3600008654); // Paca 8654
+    )->.zone;
+
+    (
+     node[amenity=parking](area.zone);
+     (
+      way[amenity=parking](area.zone);
+      (._;>;);
+     );
+    );
+    out meta;
+
+
 `Wiki <https://wiki.openstreetmap.org/wiki/FR:Overpass_turbo>`_ | 
 `API Explorer <https://overpass-turbo.eu/>`_
 
