@@ -42,7 +42,7 @@ Le reporting est un compte rendu bref et quotidien de la progression de la team.
 
 * **2020/03/24** :**Process :** Sampling d'ortho supplémentaire **Audit :** python code non_parking & non_bati
 
-* **2020/03/25** :**QGIS :** Sampling d'ortho parking/non_parking QGI
+* **2020/03/25** :**QGIS :** Sampling d'ortho parking/non_parking QGI **Doc :**   
   
 * **2020/03/26** :**Process :** Train du script [parking.py](https://github.com/hachem13/StageCerema/blob/master/docs/source/external-files/train_parking.py) (parkings-paca)
 
@@ -55,3 +55,4 @@ Les logs regroupe les ajout et modification significative du dépot.
 * **2020/03/13** : Création du dépot.
 * **2020/03/16** : Upload Ver 0.1.0 de la doc -> Enrichissement de contents.
 * **2020/03/18** : Upload Ver 0.1.1 de la doc sections Enrichis + ajouts de nouvelles sections -> Enrichessements de contents.
+* **2020/03/25** : Upload ver 0.1.2 de la doc sections Enrichis : QGIS / Overpass -> Clarification de la documentation -> Enrichessements de contents
