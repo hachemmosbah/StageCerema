@@ -14,9 +14,9 @@ Vérification des données parkings
 
 Je vois l'aire maximale des parkings sur Bouches du Rhône
 
-	Vue > Statistiques
+Vue > Statistiques
 
->
+.. code-block::
 
 	$area :
 	
@@ -44,7 +44,7 @@ Sélection des objets à échantillonner
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	Traitement > Extraire par expression
 
->
+.. code-block::
 
 	"LIB4_17" NOT ILIKE '%parking%'
 	and "LIB4_17" NOT IN (
@@ -92,7 +92,7 @@ Ouvrir couche communes et la filtrer
 
 	Couche > Filtrer
 
->
+.. code-block::
 	
 	CODE_DEPT = '13'
 
