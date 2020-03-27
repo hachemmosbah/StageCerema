@@ -16,8 +16,6 @@ Je vois l'aire maximale des parkings sur Bouches du Rhône
 
 Vue > Statistiques
 
-.. code-block::
-
 	$area :
 	
 	Statistique	Valeur
@@ -44,7 +42,7 @@ Sélection des objets à échantillonner
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	Traitement > Extraire par expression
 
-.. code-block::
+.. code-block:: bash
 
 	"LIB4_17" NOT ILIKE '%parking%'
 	and "LIB4_17" NOT IN (
@@ -92,7 +90,7 @@ Ouvrir couche communes et la filtrer
 
 	Couche > Filtrer
 
-.. code-block::
+.. code-block:: bash
 	
 	CODE_DEPT = '13'
 

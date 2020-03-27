@@ -192,9 +192,9 @@
 <h3>Vérification des données parkings<a class="headerlink" href="#verification-des-donnees-parkings" title="Permalink to this headline">¶</a></h3>
 <p>Je vois l’aire maximale des parkings sur Bouches du Rhône</p>
 <p>Vue &gt; Statistiques</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$area :
-
-Statistique     Valeur
+<blockquote>
+<div><p>$area :</p>
+<p>Statistique     Valeur
 Moyenne 1493.8
 Médiane 639.879
 Minimum 7.15668
@@ -206,9 +206,8 @@ Variété 5877
 Q1      270.35
 Q3      1509.46
 IQR     1239.11
-Valeurs (null) manquantes       0
-</pre></div>
-</div>
+Valeurs (null) manquantes       0</p>
+</div></blockquote>
 </div>
 <div class="section" id="liste-des-classes">
 <h3>Liste des classes<a class="headerlink" href="#liste-des-classes" title="Permalink to this headline">¶</a></h3>
@@ -221,16 +220,16 @@ Valeurs (null) manquantes       0
 <blockquote>
 <div><p>Traitement &gt; Extraire par expression</p>
 </div></blockquote>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&quot;LIB4_17&quot; NOT ILIKE &#39;%parking%&#39;
-and &quot;LIB4_17&quot; NOT IN (
-&#39;Cours et voies d?eau&#39;,
-&#39;Ripisylves&#39;,
-&#39;Réseau routier et bâtis techniques associés&#39;,
-&#39;Réseau ferroviaire et bâtis techniques associés&#39;,
-&#39;Chemins, Digues et Interstices agricoles&#39;,
-&#39;Canal&#39;,
-&#39;Espaces associés aux réseaux routier et/ou ferroviaire&#39;)
-and $area &lt;= 83000
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;LIB4_17&quot;</span> NOT ILIKE <span class="s1">&#39;%parking%&#39;</span>
+and <span class="s2">&quot;LIB4_17&quot;</span> NOT IN <span class="o">(</span>
+<span class="s1">&#39;Cours et voies d?eau&#39;</span>,
+<span class="s1">&#39;Ripisylves&#39;</span>,
+<span class="s1">&#39;Réseau routier et bâtis techniques associés&#39;</span>,
+<span class="s1">&#39;Réseau ferroviaire et bâtis techniques associés&#39;</span>,
+<span class="s1">&#39;Chemins, Digues et Interstices agricoles&#39;</span>,
+<span class="s1">&#39;Canal&#39;</span>,
+<span class="s1">&#39;Espaces associés aux réseaux routier et/ou ferroviaire&#39;</span><span class="o">)</span>
+and <span class="nv">$area</span> &lt;<span class="o">=</span> <span class="m">83000</span>
 </pre></div>
 </div>
 </div>
@@ -269,7 +268,7 @@ and $area &lt;= 83000
 <blockquote>
 <div><p>Couche &gt; Filtrer</p>
 </div></blockquote>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CODE_DEPT</span> <span class="o">=</span> <span class="s1">&#39;13&#39;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">CODE_DEPT</span> <span class="o">=</span> <span class="s1">&#39;13&#39;</span>
 </pre></div>
 </div>
 </div>
