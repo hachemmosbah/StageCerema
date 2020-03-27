@@ -34,19 +34,19 @@ Le reporting est un compte rendu bref et quotidien de la progression de la team.
 
 * **2020/03/18 :** **Doc :** Update ajout de section Senas,Overpass et PostgreSQL (Joshua) **Training AI :** Premiers essais de training sur le dataset (Daniel).
 
-* **2020/03/19** :**Process :** Upload ortho de découpage senas, 
+* **2020/03/19** :**Process :** Upload ortho de découpage senas **Neat-EO :** Training
 
 * **2020/03/20** :**Process :** Train du script [parking.py](https://github.com/hachem13/StageCerema/blob/master/docs/source/external-files/train_parking.py) (parkings-paris)
   
-* **2020/03/23** :**Process :** Saturation du prog python en deeplearning (db weak)
+* **2020/03/23** :**Process :** Saturation du prog python en deeplearning (db weak) **Neat-EO :** Training
 
-* **2020/03/24** :**Process :** Sampling d'ortho supplémentaire **Audit :** python code non_parking & non_bati
+* **2020/03/24** :**Process :** Sampling d'ortho supplémentaire **Audit :** python code non_parking & non_bati **Neat-EO :** Training
 
-* **2020/03/25** :**QGIS :** Sampling d'ortho parking/non_parking QGI **Doc :**   
+* **2020/03/25** :**QGIS :** Sampling d'ortho parking/non_parking QGI **Doc :** **Neat-EO :** Training  
   
 * **2020/03/26** :**Process :** Train du script [parking.py](https://github.com/hachem13/StageCerema/blob/master/docs/source/external-files/train_parking.py) (parkings-paca) **Doc :** Enrichissement de la section QGIS 
 
-* **2020/03/27** :**Doc :** Enrichissement de la section Neat-EO **Meetup :** Briefing fin de stage avec la team Med-data. 
+* **2020/03/27** :**Doc :** Enrichissement de la section Neat-EO **Meetup :** Briefing fin de stage avec la team Med-data. **Neat-EO :** Training **Audit :** YOLO/YOLT/Darknet 
 
 
 
