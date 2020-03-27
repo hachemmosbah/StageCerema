@@ -25,7 +25,7 @@ Extraction de data
 On utilise cette querie pour extraire la position des parkings sur la région paca, on va l'extraire en format geoJSON de sorte à pouvoir en faire un layer dans QGIS pour le sampling d'ortho. 
 Voici la querie que nous avons utiliser :
 
-.. code-block:: 
+.. code-block:: sql
 
     [timeout:40000];
     (

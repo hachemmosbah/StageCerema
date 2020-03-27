@@ -182,20 +182,20 @@ Création de prototype cartographique cliquable ou statique contenant les entit�
 <h2>Extraction de data<a class="headerlink" href="#extraction-de-data" title="Permalink to this headline">¶</a></h2>
 <p>On utilise cette querie pour extraire la position des parkings sur la région paca, on va l’extraire en format geoJSON de sorte à pouvoir en faire un layer dans QGIS pour le sampling d’ortho.
 Voici la querie que nous avons utiliser :</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">timeout</span><span class="p">:</span><span class="mi">40000</span><span class="p">];</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">timeout</span><span class="p">:</span><span class="mi">40000</span><span class="p">];</span>
 <span class="p">(</span>
  <span class="o">//</span><span class="n">area</span><span class="p">(</span><span class="mi">3601403916</span><span class="p">);</span> <span class="o">//</span> <span class="n">France</span> <span class="n">métropolitaine</span> <span class="mi">1403916</span>
  <span class="n">area</span><span class="p">(</span><span class="mi">3600008654</span><span class="p">);</span> <span class="o">//</span> <span class="n">Paca</span> <span class="mi">8654</span>
-<span class="p">)</span><span class="o">-&gt;.</span><span class="n">zone</span><span class="p">;</span>
+<span class="p">)</span><span class="o">-&gt;</span><span class="p">.</span><span class="k">zone</span><span class="p">;</span>
 
 <span class="p">(</span>
- <span class="n">node</span><span class="p">[</span><span class="n">amenity</span><span class="o">=</span><span class="n">parking</span><span class="p">](</span><span class="n">area</span><span class="o">.</span><span class="n">zone</span><span class="p">);</span>
+ <span class="n">node</span><span class="p">[</span><span class="n">amenity</span><span class="o">=</span><span class="n">parking</span><span class="p">](</span><span class="n">area</span><span class="p">.</span><span class="k">zone</span><span class="p">);</span>
  <span class="p">(</span>
-  <span class="n">way</span><span class="p">[</span><span class="n">amenity</span><span class="o">=</span><span class="n">parking</span><span class="p">](</span><span class="n">area</span><span class="o">.</span><span class="n">zone</span><span class="p">);</span>
-  <span class="p">(</span><span class="o">.</span><span class="n">_</span><span class="p">;</span><span class="o">&gt;</span><span class="p">;);</span>
+  <span class="n">way</span><span class="p">[</span><span class="n">amenity</span><span class="o">=</span><span class="n">parking</span><span class="p">](</span><span class="n">area</span><span class="p">.</span><span class="k">zone</span><span class="p">);</span>
+  <span class="p">(.</span><span class="n">_</span><span class="p">;</span><span class="o">&gt;</span><span class="p">;);</span>
  <span class="p">);</span>
 <span class="p">);</span>
-<span class="n">out</span> <span class="n">meta</span><span class="p">;</span>
+<span class="k">out</span> <span class="n">meta</span><span class="p">;</span>
 </pre></div>
 </div>
 <p><a class="reference external" href="https://wiki.openstreetmap.org/wiki/FR:Overpass_turbo">Wiki</a> |

@@ -6,7 +6,7 @@ Installation
 
 L'installation de neat-eo est très simple et c'est passé sans acoup avec  
 
-.. code-block:: 
+.. code-block:: bash
 
     pip3 install https://neat-eo.pink/latest
 
@@ -32,7 +32,7 @@ Ainsi qu'un .csv qui regroupera les infos permettant au tiles d'avoir un ordre e
 
 N'oubliez pas d'utiliser :
 
-.. code-block:: 
+.. code-block:: bash
     
     export NEO_CONFIG=config_neat.toml
 
@@ -51,25 +51,25 @@ La première methode avec neo download est encore en phase test je ne peux donc
 
 La deuxième méthode avec une ortophoto déjà présente commence par le neo tile
 
-.. code-block:: 
+.. code-block:: bash
 
     neo tile --zoom 19 --bands 1,2,3 --nodata_threshold 25 --rasters [CHEMIN VERS VOTRE IMAGE] --out [CHEMIN DE SORTIE]
 
 Après ça vous génererez le fichier cover :
 
-.. code-block:: 
+.. code-block:: bash
 
     neo cover --dir [CHEMIN DE VOS IMAGE] --out [CHEMIN DE SORTIE ET EXTENSIONS SOUHAITEZ]
 
 Ensuite vous "pixeliserais" le geojson en utilisant votre fichier cover :
 
-.. code-block:: 
+.. code-block:: bash
 
     neo rasterize --geojson [CHEMIN VERS VOTRE GEOJSON] --type [FEATURES SOUHAITEZ (ex. Parking, Building..)] --cover [CHEMIN VERS VOTRE COVER] --out [CHEMIN DE SORTIE]
 
 Quand ces étapes sont faites on va pouvoir entrainer le model :
 
-.. code-block:: 
+.. code-block:: bash
 
     neo train --dataset [CHEMIN VERS VOTRE DATASET D'ENTRAINEMENT] --epochs [Nombre d'epoch à Entrainer] --out [CHEMIN DE SORTIE]
 
@@ -81,20 +81,20 @@ Après avoir entrainer votre model on va découpez l'image de prédiction avec n
 
 Après ça on lance la prédiction : 
 
-.. code-block:: 
+.. code-block:: bash
 
     neo predict --checkpoint model/checkpoint-00005.pth --dataset predict --metatiles --out predict/masks
 
 La prédiction terminé on réutilise neo cover et neo rasterize sur la prediction :
 
-.. code-block:: 
+.. code-block:: bash
 
     neo cover --dir predict/masks --out predict/cover.csv
     neo rasterize --geojson predict/*/*-labels/*.geojson --type Building --cover predict/cover.csv --out predict/labels
 
 On fait les comparaisons 
 
-.. code-block:: 
+.. code-block:: bash
 
     neo compare --mode stack --images predict/images predict/labels predict/masks --cover predict/cover.csv --out predict/compare
 
@@ -104,7 +104,7 @@ On fait les comparaisons
 
 Et finalement on vectorize les résultats
 
-.. code-block:: 
+.. code-block:: bash
 
     neo vectorize --masks predict/masks --type Building --out predict/building.json
 
