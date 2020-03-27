@@ -16,14 +16,14 @@ import sphinx_rtd_theme
 # sys.path.insert(0, os.path.abspath('.'))
 
 
-# -- Project information -----------------------------------------------------
+-- Project information -----------------------------------------------------
 
 project = 'Med-Data'
 copyright = '2020, ejhb'
 author = 'ejhb'
 
 # The full version, including alpha/beta/rc tags
-release = '0.0.1'
+release = '0.1.3'
 
 
 # -- General configuration ---------------------------------------------------
