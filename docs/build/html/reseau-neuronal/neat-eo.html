@@ -83,7 +83,10 @@
               <p class="caption"><span class="caption-text">Réseau neuronal</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Neat-EO</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#intro">Intro</a><ul class="simple">
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#preparation">Préparation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#utilisation">Utilisation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#les-outils">Les outils</a><ul class="simple">
 </ul>
 </li>
 </ul>
@@ -164,9 +167,82 @@
             
   <div class="section" id="neat-eo">
 <h1>Neat-EO<a class="headerlink" href="#neat-eo" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="intro">
-<h2>Intro<a class="headerlink" href="#intro" title="Permalink to this headline">¶</a></h2>
-<p>IN PROGRESS</p>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>L’installation de neat-eo est très simple et c’est passé sans acoup avec</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip3</span> <span class="n">install</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">neat</span><span class="o">-</span><span class="n">eo</span><span class="o">.</span><span class="n">pink</span><span class="o">/</span><span class="n">latest</span>
+</pre></div>
+</div>
+<p>Il faut quand même faire attention que CUDA et le Driver Nvidia soi bien installé sinon une erreur vous disant que vous n’avez aucun GPU surviendrait durant l’entrainement.</p>
+</div>
+<div class="section" id="preparation">
+<h2>Préparation<a class="headerlink" href="#preparation" title="Permalink to this headline">¶</a></h2>
+<p>IL y’a deux façon de preparer votre dataset :</p>
+<ol class="arabic simple">
+<li><p>Soit par téléchargement grâce “neo download” et un serveur Web en WMS ou XYZ, pour télécharger directement les tiles mais attention il vous faudra un fichier cover  .tiles ou un .csv.  (Cette façon est en progression…)</p></li>
+<li><p>Soit vous avez déjà une Ortophoto que vous avez déjà en votre possesion et que vous découperez en utilisant “neo tile”. Mais attention il vous faudra le geojson correspondant à l’image.</p></li>
+</ol>
+<p>Il vous faudra donc une Ortophoto (ou des tiles suivant la méthode que vous allez pouvoir découper en tiles grâce a NEAT, un geojson contenant les “Labels” qui vous intéressent (Building , Parking etc…)</p>
+<p>Ainsi qu’un .csv qui regroupera les infos permettant au tiles d’avoir un ordre et de pouvoir s’assembler correctement ,  mais ce dernier peut être générer avec NEAT.</p>
+<p><a class="reference external" href="https://github.com/hachem13/StageCerema/blob/master/docs/source/external-files/config_neat.toml">Ici le config.toml</a> qui est le file config de neat-eo pour votre entrainement d’entrainement, on peux y regler de nombreux paramètre comme la couleur , le nom des labels…</p>
+<p>N’oubliez pas d’utiliser :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">NEO_CONFIG</span><span class="o">=</span><span class="n">config_neat</span><span class="o">.</span><span class="n">toml</span>
+</pre></div>
+</div>
+<p>Pour utiliser votre fichier en Config.</p>
+<p>J’ai eu un problème lors de l’entrainement , je n’avais pas assez de mémoire GPU , car j’ai 6 GO et 8go sont recomandé , pour résoudre mon problème j’ai reglé le “bs” (batch size) du config file sur 3 au lieu de 4, et l’entraînement à pu être éffectuer.</p>
+</div>
+<div class="section" id="utilisation">
+<h2>Utilisation<a class="headerlink" href="#utilisation" title="Permalink to this headline">¶</a></h2>
+<p>Je précise bien que neo s’utilise avec le terminal</p>
+<p>La première methode avec neo download est encore en phase test je ne peux donc pas compléter cette partie.</p>
+<p>La deuxième méthode avec une ortophoto déjà présente commence par le neo tile</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">neo</span> <span class="n">tile</span> <span class="o">--</span><span class="n">zoom</span> <span class="mi">19</span> <span class="o">--</span><span class="n">bands</span> <span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span> <span class="o">--</span><span class="n">nodata_threshold</span> <span class="mi">25</span> <span class="o">--</span><span class="n">rasters</span> <span class="p">[</span><span class="n">CHEMIN</span> <span class="n">VERS</span> <span class="n">VOTRE</span> <span class="n">IMAGE</span><span class="p">]</span> <span class="o">--</span><span class="n">out</span> <span class="p">[</span><span class="n">CHEMIN</span> <span class="n">DE</span> <span class="n">SORTIE</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Après ça vous génererez le fichier cover :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">neo</span> <span class="n">cover</span> <span class="o">--</span><span class="nb">dir</span> <span class="p">[</span><span class="n">CHEMIN</span> <span class="n">DE</span> <span class="n">VOS</span> <span class="n">IMAGE</span><span class="p">]</span> <span class="o">--</span><span class="n">out</span> <span class="p">[</span><span class="n">CHEMIN</span> <span class="n">DE</span> <span class="n">SORTIE</span> <span class="n">ET</span> <span class="n">EXTENSIONS</span> <span class="n">SOUHAITEZ</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Ensuite vous “pixeliserais” le geojson en utilisant votre fichier cover :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">neo</span> <span class="n">rasterize</span> <span class="o">--</span><span class="n">geojson</span> <span class="p">[</span><span class="n">CHEMIN</span> <span class="n">VERS</span> <span class="n">VOTRE</span> <span class="n">GEOJSON</span><span class="p">]</span> <span class="o">--</span><span class="nb">type</span> <span class="p">[</span><span class="n">FEATURES</span> <span class="n">SOUHAITEZ</span> <span class="p">(</span><span class="n">ex</span><span class="o">.</span> <span class="n">Parking</span><span class="p">,</span> <span class="n">Building</span><span class="o">..</span><span class="p">)]</span> <span class="o">--</span><span class="n">cover</span> <span class="p">[</span><span class="n">CHEMIN</span> <span class="n">VERS</span> <span class="n">VOTRE</span> <span class="n">COVER</span><span class="p">]</span> <span class="o">--</span><span class="n">out</span> <span class="p">[</span><span class="n">CHEMIN</span> <span class="n">DE</span> <span class="n">SORTIE</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Quand ces étapes sont faites on va pouvoir entrainer le model :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">neo</span> <span class="n">train</span> <span class="o">--</span><span class="n">dataset</span> <span class="p">[</span><span class="n">CHEMIN</span> <span class="n">VERS</span> <span class="n">VOTRE</span> <span class="n">DATASET</span> <span class="n">D</span><span class="s1">&#39;ENTRAINEMENT] --epochs [Nombre d&#39;</span><span class="n">epoch</span> <span class="n">à</span> <span class="n">Entrainer</span><span class="p">]</span> <span class="o">--</span><span class="n">out</span> <span class="p">[</span><span class="n">CHEMIN</span> <span class="n">DE</span> <span class="n">SORTIE</span><span class="p">]</span>
+
+<span class="n">neo</span> <span class="nb">eval</span> <span class="o">--</span><span class="n">checkpoint</span> <span class="p">[</span><span class="n">CHEMIN</span> <span class="n">VERS</span> <span class="n">VOTRE</span> <span class="n">DERNIER</span> <span class="n">CHECKPOINT</span><span class="p">]</span> <span class="o">--</span><span class="n">dataset</span> <span class="n">train</span>
+
+<span class="n">neo</span> <span class="nb">eval</span> <span class="n">lance</span> <span class="n">une</span> <span class="n">evaluation</span> <span class="n">à</span> <span class="n">partir</span> <span class="n">du</span> <span class="n">checkpoint</span> <span class="n">souhaitez</span>
+</pre></div>
+</div>
+<p>Après avoir entrainer votre model on va découpez l’image de prédiction avec neo tiles et les même paramètre que utiliser au début.</p>
+<p>Après ça on lance la prédiction :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">neo</span> <span class="n">predict</span> <span class="o">--</span><span class="n">checkpoint</span> <span class="n">model</span><span class="o">/</span><span class="n">checkpoint</span><span class="o">-</span><span class="mf">00005.</span><span class="n">pth</span> <span class="o">--</span><span class="n">dataset</span> <span class="n">predict</span> <span class="o">--</span><span class="n">metatiles</span> <span class="o">--</span><span class="n">out</span> <span class="n">predict</span><span class="o">/</span><span class="n">masks</span>
+</pre></div>
+</div>
+<p>La prédiction terminé on réutilise neo cover et neo rasterize sur la prediction :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">neo</span> <span class="n">cover</span> <span class="o">--</span><span class="nb">dir</span> <span class="n">predict</span><span class="o">/</span><span class="n">masks</span> <span class="o">--</span><span class="n">out</span> <span class="n">predict</span><span class="o">/</span><span class="n">cover</span><span class="o">.</span><span class="n">csv</span>
+<span class="n">neo</span> <span class="n">rasterize</span> <span class="o">--</span><span class="n">geojson</span> <span class="n">predict</span><span class="o">/*/*-</span><span class="n">labels</span><span class="o">/*.</span><span class="n">geojson</span> <span class="o">--</span><span class="nb">type</span> <span class="n">Building</span> <span class="o">--</span><span class="n">cover</span> <span class="n">predict</span><span class="o">/</span><span class="n">cover</span><span class="o">.</span><span class="n">csv</span> <span class="o">--</span><span class="n">out</span> <span class="n">predict</span><span class="o">/</span><span class="n">labels</span>
+</pre></div>
+</div>
+<p>On fait les comparaisons</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">neo</span> <span class="n">compare</span> <span class="o">--</span><span class="n">mode</span> <span class="n">stack</span> <span class="o">--</span><span class="n">images</span> <span class="n">predict</span><span class="o">/</span><span class="n">images</span> <span class="n">predict</span><span class="o">/</span><span class="n">labels</span> <span class="n">predict</span><span class="o">/</span><span class="n">masks</span> <span class="o">--</span><span class="n">cover</span> <span class="n">predict</span><span class="o">/</span><span class="n">cover</span><span class="o">.</span><span class="n">csv</span> <span class="o">--</span><span class="n">out</span> <span class="n">predict</span><span class="o">/</span><span class="n">compare</span>
+
+<span class="n">neo</span> <span class="n">compare</span> <span class="o">--</span><span class="n">mode</span> <span class="nb">list</span> <span class="o">--</span><span class="n">labels</span> <span class="n">predict</span><span class="o">/</span><span class="n">labels</span> <span class="o">--</span><span class="n">masks</span> <span class="n">predict</span><span class="o">/</span><span class="n">masks</span> <span class="o">--</span><span class="nb">max</span> <span class="n">Building</span> <span class="n">QoD</span> <span class="mf">0.80</span> <span class="o">--</span><span class="n">cover</span> <span class="n">predict</span><span class="o">/</span><span class="n">cover</span><span class="o">.</span><span class="n">csv</span> <span class="o">--</span><span class="n">geojson</span> <span class="o">--</span><span class="n">out</span> <span class="n">predict</span><span class="o">/</span><span class="n">compare</span><span class="o">/</span><span class="n">tiles</span><span class="o">.</span><span class="n">json</span>
+
+<span class="n">neo</span> <span class="n">compare</span> <span class="o">--</span><span class="n">mode</span> <span class="n">side</span> <span class="o">--</span><span class="n">images</span> <span class="n">predict</span><span class="o">/</span><span class="n">images</span> <span class="n">predict</span><span class="o">/</span><span class="n">compare</span> <span class="o">--</span><span class="n">cover</span> <span class="n">predict</span><span class="o">/</span><span class="n">cover</span><span class="o">.</span><span class="n">csv</span> <span class="o">--</span><span class="n">out</span> <span class="n">predict</span><span class="o">/</span><span class="n">compare_side</span>
+</pre></div>
+</div>
+<p>Et finalement on vectorize les résultats</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">neo</span> <span class="n">vectorize</span> <span class="o">--</span><span class="n">masks</span> <span class="n">predict</span><span class="o">/</span><span class="n">masks</span> <span class="o">--</span><span class="nb">type</span> <span class="n">Building</span> <span class="o">--</span><span class="n">out</span> <span class="n">predict</span><span class="o">/</span><span class="n">building</span><span class="o">.</span><span class="n">json</span>
+</pre></div>
+</div>
+<p>Vous pourrez retrouver un entrainement très sympas sur le repo de NEAT-EO</p>
+</div>
+<div class="section" id="les-outils">
+<h2>Les outils<a class="headerlink" href="#les-outils" title="Permalink to this headline">¶</a></h2>
+<p>Pour plus de précisions sur les outils rendez vous sur la Doc <a class="reference external" href="https://datapink.io/datapink/neat-EO/src/branch/master/docs/tools.md">tools</a>  de NEAT-EO</p>
 <p><a class="reference external" href="https://datapink.io/datapink/neat-EO/src/branch/master/README.md">Source</a></p>
 <div class="toctree-wrapper compound">
 </div>
