@@ -16,6 +16,8 @@ Je vois l'aire maximale des parkings sur Bouches du Rhône
 
 Vue > Statistiques
 
+.. code-block:: bash
+
 	$area :
 	
 	Statistique	Valeur
