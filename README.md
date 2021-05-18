@@ -1,4 +1,4 @@
-# Documentation med-data
+# <p align=center>Documentation med-data</p>
 
 Dans ce repertoire vous pourrez retrouver une documentation détaillé de la stack med-data. Elle est réalisé par les stagières de **Simplon.co** l'ors de leurs formation en la qualité de deveuloppers.se Data dans le cadre de leurs stage en **deeplearning** à la **Cerema**.
 
@@ -8,35 +8,54 @@ Responsable de la documentation : Joshua
 
 [Lien vers la documentation](https://documentation-med-data.readthedocs.io/en/latest/)
 
-## Reporting
+
+## <p align=center>Reporting</p>
+
 
 Le reporting est un compte rendu bref et quotidien de la progression de la team.
 
 * **2020/03/02 :** Entretient à Cerema : Premiers contact avec nos tuteur de stage, briefing du projet.
-* **2020/03/03 à /03/06 :** Finalisation des conventions de stage, premiers pas deeplearning avec la documentation fournie par Cerema et audit tout le long de la semaine.
-* **2020/03/09 :** Immersion en entreprise reconaisasnce et mise en place physique de l'espace de travail. Suite de l'audit de la documentation.
-* **2020/03/10 :** Briefing de la situation avec nos tuteurs de stage. Extraction d'opendata : API : TurboOverpass, suite de l'audit.
-* **2020/03/11 :** **Audit :** robosat.pink\(Neat-EO\), YOLO/YOLT \(reconnaissance objet\). **Setup :** NEAT-EO & QGIS
-* **2020/03/12 :** **QGIS :** Sampling dataset, NEAT-EO : détourage, **AUDIT :** POSTGRE,POSTGIS
-* **2020/03/13 :** **REMOTE :** Mise en place d'un environement full remote avec la stack, création d'un [Trello](https://trello.com/b/oE3T8HdO/stage-cerema) et de la [Documentation](https://documentation-med-data.readthedocs.io/en/latest/).
-* **2020/03/16 :** **Doc :** Update .md into .rst, **Process :** +7 000 Orthophoto, **Audit :** Neat-EO,Senas, **Trello :** Création du trello.
-* **2020/03/17 :** **Sampling :** Dataset terminé -&gt; Upload \(Hachem\) sur Box fournie par Cerema -&gt; Download Dataset \(Daniel\)
-* **2020/03/18 :** **Doc :** Update ajout de section Senas,Overpass et PostgreSQL \(Joshua\) **Training AI :** Premiers essais de training sur le dataset \(Daniel\).
-* **2020/03/19** :**Process :** Upload ortho de découpage senas **Neat-EO :** Training
-* **2020/03/20** :**Process :** Train du script [parking.py](https://github.com/hachem13/StageCerema/blob/master/docs/source/external-files/train_parking.py) \(parkings-paris\)
-* **2020/03/23** :**Process :** Saturation du prog python en deeplearning \(db weak\) **Neat-EO :** Training
-* **2020/03/24** :**Process :** Sampling d'ortho supplémentaire **Audit :** python code non\_parking & non\_bati **Neat-EO :** Training
-* **2020/03/25** :**QGIS :** Sampling d'ortho parking/non\_parking QGI **Doc :** **Neat-EO :** Training
-* **2020/03/26** :**Process :** Train du script [parking.py](https://github.com/hachem13/StageCerema/blob/master/docs/source/external-files/train_parking.py) \(parkings-paca\) **Doc :** Enrichissement de la section QGIS
-* **2020/03/27** :**Doc :** Enrichissement de la section Neat-EO **Meetup :** Briefing fin de stage avec la team Med-data. **Neat-EO :** Training **Audit :** YOLO/YOLT/Darknet
 
-## Logs
+* **2020/03/03 à /03/06 :** Finalisation des conventions de stage, premiers pas deeplearning avec la documentation fournie par Cerema et audit tout le long de la semaine.
+
+* **2020/03/09 :** Immersion en entreprise reconaisasnce et mise en place physique de l'espace de travail. Suite de l'audit de la documentation. 
+
+* **2020/03/10 :** Briefing de la situation avec nos tuteurs de stage. Extraction d'opendata : API : TurboOverpass, suite de l'audit.
+
+* **2020/03/11 :** **Audit :** robosat.pink(Neat-EO), YOLO/YOLT (reconnaissance objet). **Setup :** NEAT-EO & QGIS 
+
+* **2020/03/12 :** **QGIS :** Sampling dataset, NEAT-EO : détourage, **AUDIT :** POSTGRE,POSTGIS
+
+* **2020/03/13 :** **REMOTE :** Mise en place d'un environement full remote avec la stack, création d'un [Trello](https://trello.com/b/oE3T8HdO/stage-cerema) et de la [Documentation](https://documentation-med-data.readthedocs.io/en/latest/).
+
+* **2020/03/16 :** **Doc :** Update .md into .rst, **Process :** +7 000 Orthophoto, **Audit :** Neat-EO,Senas, **Trello :** Création du trello.
+
+* **2020/03/17 :** **Sampling :** Dataset terminé -> Upload (Hachem) sur Box fournie par Cerema -> Download Dataset (Daniel)
+
+* **2020/03/18 :** **Doc :** Update ajout de section Senas,Overpass et PostgreSQL (Joshua) **Training AI :** Premiers essais de training sur le dataset (Daniel).
+
+* **2020/03/19** :**Process :** Upload ortho de découpage senas **Neat-EO :** Training
+
+* **2020/03/20** :**Process :** Train du script [parking.py](https://github.com/hachem13/StageCerema/blob/master/docs/source/external-files/train_parking.py) (parkings-paris)
+  
+* **2020/03/23** :**Process :** Saturation du prog python en deeplearning (db weak) **Neat-EO :** Training
+
+* **2020/03/24** :**Process :** Sampling d'ortho supplémentaire **Audit :** python code non_parking & non_bati **Neat-EO :** Training
+
+* **2020/03/25** :**QGIS :** Sampling d'ortho parking/non_parking QGI **Doc :** **Neat-EO :** Training  
+  
+* **2020/03/26** :**Process :** Train du script [parking.py](https://github.com/hachem13/StageCerema/blob/master/docs/source/external-files/train_parking.py) (parkings-paca) **Doc :** Enrichissement de la section QGIS 
+
+* **2020/03/27** :**Doc :** Enrichissement de la section Neat-EO **Meetup :** Briefing fin de stage avec la team Med-data. **Neat-EO :** Training **Audit :** YOLO/YOLT/Darknet 
+
+
+
+## <p align=center>Logs</p>
 
 Les logs regroupe les ajouts et modification significative du dépot.
 
 * **2020/03/13** : Création du dépot.
-* **2020/03/16** : Upload Ver 0.1.0 de la doc -&gt; Enrichissement de contents.
-* **2020/03/18** : Upload Ver 0.1.1 de la doc sections Enrichis + ajouts de nouvelles sections -&gt; Enrichissements de contents.
-* **2020/03/26** : Upload ver 0.1.2 de la doc sections Enrichis : QGIS / Overpass -&gt; Clarification de la documentation -&gt; Enrichessements de contents
-* **2020/03/27** : Upload Ver 0.1.3 de la doc section Enrichis : Neat-EO -&gt; Clarification de la documentation -&gt; Ajout de section classification binaire
-
+* **2020/03/16** : Upload Ver 0.1.0 de la doc -> Enrichissement de contents.
+* **2020/03/18** : Upload Ver 0.1.1 de la doc sections Enrichis + ajouts de nouvelles sections -> Enrichissements de contents.
+* **2020/03/26** : Upload ver 0.1.2 de la doc sections Enrichis : QGIS / Overpass -> Clarification de la documentation -> Enrichessements de contents
+* **2020/03/27** : Upload Ver 0.1.3 de la doc section Enrichis : Neat-EO -> Clarification de la documentation -> Ajout de section classification binaire
